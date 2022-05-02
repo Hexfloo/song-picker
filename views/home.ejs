@@ -1,0 +1,32 @@
+<% layout("boilerplate") %>
+    <div class="box">
+        <h2>עזרו לנו לבחור <br> את שיר הסלואו</h2>
+        <hr class="mt-3">
+        <p class="mt-3 mb-0">
+            בעמוד הבא יופיעו שלושה שירים<br>
+            בחרו את השיר האהוב עליכם והצביעו<br><br>
+
+            השיר שיזכה במירב הקולות יהיה<br>
+            <b>שיר הסלואו שלנו.</b>
+            <br>
+            <a href="/songpicker"><button class="btn submit-btn-on shadow-none">להצבעה</button></a>
+        </p>
+    </div>
+    <div class="leaf-box">
+        <img src="https://res.cloudinary.com/hexfloo/image/upload/v1650201485/morandstav/leaf_ccso8c.png" alt="leaf"
+            height="80px" width="auto">
+        <img src="https://res.cloudinary.com/hexfloo/image/upload/v1650201485/morandstav/Mor_and_Stav_whbk5y.png"
+            alt="leaf" height="60px" width="auto">
+    </div>
+
+    <script>
+        window.onload = function () {
+            if (localStorage.length > 0) {
+                let ifVoted = localStorage.getItem("ifVoted");
+                if (ifVoted == "true") {
+                    console.log("localStorage indicates you already voted, thanks!")
+                    document.querySelector("a").setAttribute("href", "/thanks")
+                }
+            }
+        } 
+    </script>
