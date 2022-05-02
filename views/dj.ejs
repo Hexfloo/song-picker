@@ -1,0 +1,28 @@
+<% layout("boilerplate") %>
+    <div class="container my-4 box">
+        <h1>hey mister DJ</h1>
+        <br>
+        <% let song1voters=song1Arr.length %>
+            <h5>Sunshine of my life: <b>
+                    <%= song1voters %>
+                </b>
+            </h5>
+            <% let song2voters=song2Arr.length %>
+                <h5><b>
+                        <%= song2voters %>
+                    </b>:שלמים
+                </h5>
+                <% let song3voters=song3Arr.length %>
+                    <h5>The one that I want: <b>
+                            <%= song3voters %>
+                        </b>
+                    </h5>
+
+                    <a href="/"><button class="btn submit-btn-on shadow-none">Home</button></a>
+    </div>
+    <div class="m-0 leaf-box">
+        <img src="https://res.cloudinary.com/hexfloo/image/upload/v1650201485/morandstav/leaf_ccso8c.png" alt="leaf"
+            height="80px" width="auto">
+        <img src="https://res.cloudinary.com/hexfloo/image/upload/v1650201485/morandstav/Mor_and_Stav_whbk5y.png"
+            alt="leaf" height="60px" width="auto">
+    </div>
