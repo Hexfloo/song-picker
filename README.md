@@ -1,5 +1,5 @@
 # wedding-song-picker 👰🏼💍🥂
-Chuppah songs are a big deal in Jewish culture. But what if you can't decide which song is best? <br>
+Chuppah songs are a big deal in Jewish culture. But what if you can't decide which song is best for your wedding? <br>
 Let guests at your wedding pick the main Chuppah song! The wedding DJ will have access to voting results and will play the winning song. <br><br>
 <b>Try it here:</b> https://morstav-song.herokuapp.com/ <br>
 DJ hidden page: https://morstav-song.herokuapp.com/dj
