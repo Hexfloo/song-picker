@@ -1,16 +1,16 @@
 import "../App.css";
-const Dj = function () {
+const Dj = function (props) {
   return (
     <>
       <div class="container my-4 box">
         <h1>Voting Results</h1>
         <br />
 
-        <h5>Sunshine of my life:</h5>
+        <h5>Sunshine of my life: {props.items[0].song1}</h5>
 
-        <h5>:שלמים</h5>
+        <h5>{props.items[1].song2} :שלמים</h5>
 
-        <h5>The one that I want:</h5>
+        <h5>The one that I want: {props.items[2].song3}</h5>
 
         <a href="/">
           <button class="btn submit-btn-on shadow-none">Home</button>
