@@ -1,38 +1,334 @@
-.App {
-  text-align: center;
+/* basic css, suits most smartphones */
+body {
+  background-color: #e4dcd9;
+  font-family: "Assistant", sans-serif;
+  color: #2e2417;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2 {
+  font-weight: 800;
+  font-size: 2em;
+  margin: 2% 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  font-weight: 600;
+  font-size: larger;
+  margin: 2% 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+img {
+  height: 50%;
+}
+
+hr {
+  width: 50%;
+  margin: 1% auto;
+  border: 2px solid #2e2417;
+}
+
+form {
+  width: 100%;
+}
+
+label > img {
+  border-radius: 50%;
+  height: 5em;
+  float: left;
+  margin: auto;
+}
+
+input {
+  margin: 10% 0;
+}
+
+label > p {
+  width: fit-content;
+}
+
+label > h5 {
+  width: fit-content;
+  font-weight: 800;
+  margin: 0;
+}
+
+.box {
+  background-color: #f3efee;
+  border-radius: 10px;
+  position: absolute;
+  width: 85%;
+  padding: 7% 0;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.radio-button {
+  background-color: #f3efee;
+  width: 100%;
+  margin: 2% 0;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  border: medium solid #f3efee;
+  border-radius: 15px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #f3efee;
+  margin: 2% 0;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  border: medium solid #2e2417;
+  outline: none;
+}
+
+.submit-btn-on {
+  font-size: large;
+  color: white;
+  background-color: #707982;
+  width: fit-content;
+  padding: 4% 8%;
+  margin: 5% 0 2% 0;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+#song-picker-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 90%;
+  margin: auto 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#thanks-box {
+  position: fixed;
+  width: 70%;
+  top: 63%;
+  padding: 4% 2% 4%;
+  z-index: 11;
+}
+
+#thanks-page {
+  height: 59vh;
+  background-image: url("https://res.cloudinary.com/hexfloo/image/upload/v1651402961/morandstav/Small_oxabp1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.leaf-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 12;
 }
 
-.App-link {
-  color: #61dafb;
+.leaf-box > img {
+  margin: 2% 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* big screens, mainly computer screens */
+@media screen and (min-width: 601px) {
+  hr {
+    width: 20%;
+    margin-bottom: 1%;
+    border: 2px solid #2e2417;
   }
-  to {
-    transform: rotate(360deg);
+
+  form {
+    width: 100%;
+  }
+
+  label {
+    width: 100%;
+  }
+
+  label > img {
+    height: 5em;
+  }
+
+  .box {
+    width: 60%;
+    padding: 5% 5%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .radio-button {
+    width: 40%;
+    margin: 1% 0;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: #f3efee;
+    margin: 1% 0;
+  }
+
+  .submit-btn-on {
+    padding: 2% 3%;
+    margin: 2% 0 2% 0;
+  }
+
+  #song-picker-page {
+    height: 100%;
+  }
+
+  #thanks-box {
+    width: 25%;
+    top: 68%;
+    padding: 2% 0%;
+  }
+
+  #thanks-page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://res.cloudinary.com/hexfloo/image/upload/v1651402961/morandstav/Small_oxabp1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .leaf-box {
+    width: 22%;
+    height: 22%;
+    bottom: 6%;
+  }
+}
+
+/* small smartphones, that are "short" */
+@media screen and (max-height: 580px) {
+  .box {
+    padding: 6% 0;
+    top: 40%;
+  }
+
+  .radio-button {
+    width: 95%;
+    height: fit-content;
+    padding: 0.5% 3%;
+  }
+
+  .submit-btn-on {
+    margin: 5% 0 0 0;
+  }
+
+  #song-picker-page > p {
+    display: none;
+  }
+
+  #thanks-box {
+    padding: 5% 3% 3%;
+  }
+}
+
+/* smartphones in landscape mode */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  hr {
+    width: 30%;
+    margin: auto;
+    margin-bottom: 1%;
+    border: 2px solid #2e2417;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .box {
+    background-color: #f3efee;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    padding: 1% 0;
+    margin: 1% 0;
+    z-index: 10;
+  }
+
+  .radio-button {
+    background-color: #f3efee;
+    width: 70%;
+    margin: 1% 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    border: medium solid #f3efee;
+    border-radius: 15px;
+    outline: nonem !important;
+    box-sizing: border-box;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: #f3efee;
+    margin: 1% 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    border: medium solid #2e2417;
+    outline: none;
+  }
+
+  .submit-btn-on {
+    color: white;
+    background-color: #707982;
+    padding: 2% 5%;
+    margin: 2% 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  #song-picker-page {
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  #song-picker-page > p {
+    display: none;
+  }
+
+  #thanks-box {
+    position: fixed;
+    width: fit-content;
+    top: 85%;
+    padding: 0;
+    z-index: 11;
+  }
+
+  #thanks-page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://res.cloudinary.com/hexfloo/image/upload/v1651402961/morandstav/Small_oxabp1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #thanks-box {
+    position: fixed;
+    width: 50%;
+    top: 62%;
+    padding: 2% 2%;
+    z-index: 11;
+  }
+
+  .leaf-box {
+    display: none;
   }
 }
