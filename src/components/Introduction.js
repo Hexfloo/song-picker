@@ -23,9 +23,12 @@ const Introduction = function (props) {
           <br />
           <b>שיר החופה שלנו.</b>
           <br />
-          <a onClick={goToVotingHandler}>
-            <button className="btn submit-btn-on shadow-none">להצבעה</button>
-          </a>
+          <button
+            className="btn submit-btn-on shadow-none"
+            onClick={goToVotingHandler}
+          >
+            להצבעה
+          </button>
         </p>
       </div>
       <LeafBox />

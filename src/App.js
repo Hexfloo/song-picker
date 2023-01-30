@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import OptionsForm from "./components/OptionsForm";
 import Introduction from "./components/Introduction";
@@ -6,9 +6,9 @@ import Thanks from "./components/Thanks";
 import Dj from "./components/Dj";
 
 const INITIAL_VOTES = [
-  { id: "song1", votes: 1 },
-  { id: "song2", votes: 1 },
-  { id: "song3", votes: 1 },
+  { id: "song1", vote: 1 },
+  { id: "song2", vote: 1 },
+  { id: "song3", vote: 1 },
 ];
 
 function App() {
@@ -19,12 +19,14 @@ function App() {
   const changeActivePage = function (active) {
     setActiveComponent(active);
   };
+  useEffect(() => console.log(votes), [votes]);
 
   const addVote = function (newVote) {
     const newVotesObj = votes.map((song) => {
       if (song.id === newVote) {
-        song.votes++;
+        return { id: song.id, vote: (song.vote += 1) };
       }
+      return song;
     });
     setVotes(newVotesObj);
     setDidVote(true);
@@ -33,14 +35,18 @@ function App() {
   };
   return (
     <div className="App text-center">
-      {activeComponent === "Introduction" && !didVote && (
+      {activeComponent === "Introduction" && (
         <Introduction changeActive={changeActivePage} />
       )}
-      {activeComponent === "OptionsForm" && !didVote && (
+      {activeComponent === "OptionsForm" && (
         <OptionsForm onCastVote={addVote} changeActive={changeActivePage} />
       )}
-      {(activeComponent === "Thanks" || didVote) && <Thanks />}
-      {/* <Dj items={votes} /> */}
+      {activeComponent === "Thanks" && (
+        <Thanks changeActive={changeActivePage} />
+      )}
+      {activeComponent === "Dj" && (
+        <Dj items={votes} changeActive={changeActivePage} />
+      )}
     </div>
   );
 }
