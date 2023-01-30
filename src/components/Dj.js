@@ -22,7 +22,7 @@ const Dj = function (props) {
           className="btn submit-btn-on shadow-none"
           onClick={goToIntroductionHandler}
         >
-          Home
+          חזרה
         </button>
       </div>
       <LeafBox />

@@ -14,12 +14,12 @@ const INITIAL_VOTES = [
 function App() {
   const [activeComponent, setActiveComponent] = useState("Introduction");
   const [votes, setVotes] = useState(INITIAL_VOTES);
-  const [didVote, setDidVote] = useState(localStorage["ifVoted"]);
+  const [didVote, setDidVote] = useState(false);
 
   const changeActivePage = function (active) {
     setActiveComponent(active);
   };
-  useEffect(() => console.log(votes), [votes]);
+  useEffect(() => console.log(activeComponent), [activeComponent]);
 
   const addVote = function (newVote) {
     const newVotesObj = votes.map((song) => {
@@ -36,12 +36,12 @@ function App() {
   return (
     <div className="App text-center">
       {activeComponent === "Introduction" && (
-        <Introduction changeActive={changeActivePage} />
+        <Introduction changeActive={changeActivePage} didVote={didVote} />
       )}
       {activeComponent === "OptionsForm" && (
         <OptionsForm onCastVote={addVote} changeActive={changeActivePage} />
       )}
-      {activeComponent === "Thanks" && (
+      {activeComponent === "Thanks" && !(activeComponent === "Dj") && (
         <Thanks changeActive={changeActivePage} />
       )}
       {activeComponent === "Dj" && (

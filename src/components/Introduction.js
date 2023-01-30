@@ -3,6 +3,10 @@ import LeafBox from "../UI/LeafBox";
 
 const Introduction = function (props) {
   const goToVotingHandler = function () {
+    if (props.didVote === true) {
+      props.changeActive("Thanks");
+      return;
+    }
     props.changeActive("OptionsForm");
   };
 
