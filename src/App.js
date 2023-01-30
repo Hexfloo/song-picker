@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import OptionsForm from "./components/OptionsForm";
 import Introduction from "./components/Introduction";
