@@ -9,7 +9,7 @@ const Results = function (props) {
   return (
     <>
       <div className="container my-4 box">
-        <h1>Voting Results</h1>
+        <h1>תוצאות ההצבעה</h1>
         <br />
 
         <h5>Sunshine of my life: {props.items[0].vote}</h5>
