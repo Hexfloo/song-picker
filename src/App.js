@@ -29,7 +29,6 @@ function App() {
     });
     setVotes(newVotesObj);
     setDidVote(true);
-    console.log("set did vote to true and add localStorage - ENABLE FEATURE!");
     localStorage.setItem("ifVoted", "true");
   };
   return (

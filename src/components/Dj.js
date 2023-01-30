@@ -5,7 +5,7 @@ const Dj = function (props) {
   const goToIntroductionHandler = function () {
     props.changeActive("Introduction");
   };
-  console.log(props.items);
+
   return (
     <>
       <div className="container my-4 box">
