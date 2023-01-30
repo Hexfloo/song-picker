@@ -3,7 +3,7 @@ import "./App.css";
 import OptionsForm from "./components/OptionsForm";
 import Introduction from "./components/Introduction";
 import Thanks from "./components/Thanks";
-import Dj from "./components/Dj";
+import Results from "./components/Results";
 
 const INITIAL_VOTES = [
   { id: "song1", vote: 1 },
@@ -39,11 +39,11 @@ function App() {
       {activeComponent === "OptionsForm" && (
         <OptionsForm onCastVote={addVote} changeActive={changeActivePage} />
       )}
-      {activeComponent === "Thanks" && !(activeComponent === "Dj") && (
+      {activeComponent === "Thanks" && !(activeComponent === "Results") && (
         <Thanks changeActive={changeActivePage} />
       )}
-      {activeComponent === "Dj" && (
-        <Dj items={votes} changeActive={changeActivePage} />
+      {activeComponent === "Results" && (
+        <Results items={votes} changeActive={changeActivePage} />
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 import "../App.css";
 import LeafBox from "../UI/LeafBox";
 
-const Dj = function (props) {
+const Results = function (props) {
   const goToIntroductionHandler = function () {
     props.changeActive("Introduction");
   };
@@ -30,4 +30,4 @@ const Dj = function (props) {
   );
 };
 
-export default Dj;
+export default Results;

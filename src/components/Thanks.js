@@ -2,8 +2,8 @@ import "../App.css";
 import LeafBox from "../UI/LeafBox";
 
 const Thanks = function (props) {
-  const goToDjHandler = function () {
-    props.changeActive("Dj");
+  const goToResultsHandler = function () {
+    props.changeActive("Results");
   };
   return (
     <div id="thanks-page">
@@ -12,7 +12,7 @@ const Thanks = function (props) {
         <p>הדיג'יי קיבל את ההצבעה שלך</p>
         <button
           className="btn submit-btn-on shadow-none"
-          onClick={goToDjHandler}
+          onClick={goToResultsHandler}
         >
           לתוצאות
         </button>
