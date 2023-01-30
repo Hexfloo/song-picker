@@ -12,8 +12,13 @@ const INITIAL_VOTES = [
 ];
 
 function App() {
+  const [activeComponent, setActiveComponent] = useState("Introduction");
   const [votes, setVotes] = useState(INITIAL_VOTES);
-  const [didVote, setDidVote] = useState(false);
+  const [didVote, setDidVote] = useState(localStorage["ifVoted"]);
+
+  const changeActivePage = function (active) {
+    setActiveComponent(active);
+  };
 
   const addVote = function (newVote) {
     const newVotesObj = votes.map((song) => {
@@ -23,14 +28,18 @@ function App() {
     });
     setVotes(newVotesObj);
     setDidVote(true);
-    //setDidVote(true); ADD IT BACK WHEN FINISHED!!!!!@#$%^&*(*&^%$#@)
-    console.log("set did vote to true and add localStorage");
+    console.log("set did vote to true and add localStorage - ENABLE FEATURE!");
     localStorage.setItem("ifVoted", "true");
   };
   return (
     <div className="App text-center">
-      {/* <Introduction /> */}
-      {didVote ? <Thanks /> : <OptionsForm onCastVote={addVote} />}
+      {activeComponent === "Introduction" && !didVote && (
+        <Introduction changeActive={changeActivePage} />
+      )}
+      {activeComponent === "OptionsForm" && !didVote && (
+        <OptionsForm onCastVote={addVote} changeActive={changeActivePage} />
+      )}
+      {(activeComponent === "Thanks" || didVote) && <Thanks />}
       {/* <Dj items={votes} /> */}
     </div>
   );

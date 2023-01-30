@@ -37,6 +37,7 @@ const OptionsForm = function (props) {
 
   const submitHandler = function () {
     props.onCastVote(selectedSong);
+    props.changeActive("Thanks");
   };
 
   const handleRadioChange = function (event) {
@@ -125,6 +126,7 @@ const OptionsForm = function (props) {
             type="submit"
             className="btn submit-btn-on"
             onClick={submitHandler}
+            disabled={selectedSong === ""}
           >
             לשלוח לדיג'יי
           </button>

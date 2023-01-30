@@ -1,6 +1,11 @@
 import "../App.css";
+import LeafBox from "../UI/LeafBox";
 
-const Introduction = function () {
+const Introduction = function (props) {
+  const goToVotingHandler = function () {
+    props.changeActive("OptionsForm");
+  };
+
   return (
     <>
       <div className="box">
@@ -18,25 +23,12 @@ const Introduction = function () {
           <br />
           <b>שיר החופה שלנו.</b>
           <br />
-          <a href="/songpicker">
+          <a onClick={goToVotingHandler}>
             <button className="btn submit-btn-on shadow-none">להצבעה</button>
           </a>
         </p>
       </div>
-      <div className="leaf-box">
-        <img
-          src="https://res.cloudinary.com/hexfloo/image/upload/v1650201485/morandstav/leaf_ccso8c.png"
-          alt="leaf"
-          height="80px"
-          width="auto"
-        />
-        <img
-          src="https://res.cloudinary.com/hexfloo/image/upload/v1650201485/morandstav/Mor_and_Stav_whbk5y.png"
-          alt="leaf"
-          height="60px"
-          width="auto"
-        />
-      </div>
+      <LeafBox />
     </>
   );
 };
