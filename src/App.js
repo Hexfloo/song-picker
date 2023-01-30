@@ -19,7 +19,6 @@ function App() {
   const changeActivePage = function (active) {
     setActiveComponent(active);
   };
-  useEffect(() => console.log(activeComponent), [activeComponent]);
 
   const addVote = function (newVote) {
     const newVotesObj = votes.map((song) => {
