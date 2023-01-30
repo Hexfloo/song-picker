@@ -41,6 +41,7 @@ label > img {
   height: 5em;
   float: left;
   margin: auto;
+  pointer-events: none;
 }
 
 input {
@@ -49,12 +50,14 @@ input {
 
 label > p {
   width: fit-content;
+  pointer-events: none;
 }
 
 label > h5 {
   width: fit-content;
   font-weight: 800;
   margin: 0;
+  pointer-events: none;
 }
 
 .box {

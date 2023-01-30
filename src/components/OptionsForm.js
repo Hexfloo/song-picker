@@ -3,7 +3,7 @@ import "../App.css";
 import { useState, Fragment } from "react";
 
 const OptionsForm = function (props) {
-  const [selectedSong, setSelectedSong] = useState("song1");
+  const [selectedSong, setSelectedSong] = useState("");
 
   const songs = [
     {
@@ -35,25 +35,12 @@ const OptionsForm = function (props) {
     },
   ];
 
-  /*
-  if (localStorage.length > 0) {
-    if (localStorage.getItem("ifVoted") === "true") {
-      console.log("localStorage indicates you already voted, thanks!");
-      return;
-    }
-  }
-  */
-
-  const submitHandler = function (event) {
-    event.preventDefault();
-    localStorage.setItem("ifVoted", "true");
-    console.log(selectedSong);
+  const submitHandler = function () {
     props.onCastVote(selectedSong);
   };
 
-  const handleChange = function (event) {
-    setSelectedSong(event.currentTarget.value);
-    console.log(selectedSong);
+  const handleRadioChange = function (event) {
+    setSelectedSong(event.target.htmlFor);
   };
 
   return (
@@ -69,35 +56,79 @@ const OptionsForm = function (props) {
           ולחצו לשלוח לדיג'יי
         </p>
 
-        <form onSubmit={submitHandler} className="needs-validation" noValidate>
-          {songs.map((song) => (
-            <div key={song.id}>
-              <input
-                type="radio"
-                className="btn-check"
-                name="song"
-                value={song.identifier}
-                autoComplete="off"
-                checked={selectedSong === song.identifier}
-                onChange={(event) => {
-                  setSelectedSong(event.target.value);
-                }}
-              />
-              <label
-                className="btn radio-button shadow-none"
-                htmlFor={song.identifier}
-              >
-                <img src={song.image} alt="artist" className="my-0" />
-                <p className="my-0 text-muted">{song.description}</p>
-                <h5 className="my-0">{song.title}</h5>
-                <p className="my-0">{song.artist}</p>
-              </label>
-            </div>
-          ))}
-          <button type="submit" className="btn submit-btn-on">
+        <div className="needs-validation" noValidate>
+          <input
+            type="radio"
+            className="btn-check"
+            name="song"
+            value={songs[0].identifier}
+            autoComplete="off"
+            checked={selectedSong === songs[0].identifier}
+            onChange={handleRadioChange}
+          />
+          <label
+            className="btn radio-button shadow-none"
+            htmlFor={songs[0].identifier}
+            onClick={handleRadioChange}
+          >
+            <img src={songs[0].image} alt="artist" className="my-0" />
+            <p className="my-0 text-muted">{songs[0].description}</p>
+            <h5 className="my-0">{songs[0].title}</h5>
+            <p className="my-0">{songs[0].artist}</p>
+          </label>
+
+          <div key={songs[1].id}>
+            <input
+              type="radio"
+              className="btn-check"
+              name="song"
+              value={songs[1].identifier}
+              autoComplete="off"
+              checked={selectedSong === songs[1].identifier}
+              onChange={handleRadioChange}
+            />
+            <label
+              className="btn radio-button shadow-none"
+              htmlFor={songs[1].identifier}
+              onClick={handleRadioChange}
+            >
+              <img src={songs[1].image} alt="artist" className="my-0" />
+              <p className="my-0 text-muted">{songs[1].description}</p>
+              <h5 className="my-0">{songs[1].title}</h5>
+              <p className="my-0">{songs[1].artist}</p>
+            </label>
+          </div>
+
+          <div key={songs[2].id}>
+            <input
+              type="radio"
+              className="btn-check"
+              name="song"
+              value={songs[2].identifier}
+              autoComplete="off"
+              checked={selectedSong === songs[2].identifier}
+              onChange={handleRadioChange}
+            />
+            <label
+              className="btn radio-button shadow-none"
+              htmlFor={songs[2].identifier}
+              onClick={handleRadioChange}
+            >
+              <img src={songs[2].image} alt="artist" className="my-0" />
+              <p className="my-0 text-muted">{songs[2].description}</p>
+              <h5 className="my-0">{songs[2].title}</h5>
+              <p className="my-0">{songs[2].artist}</p>
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="btn submit-btn-on"
+            onClick={submitHandler}
+          >
             לשלוח לדיג'יי
           </button>
-        </form>
+        </div>
       </div>
     </Fragment>
   );
