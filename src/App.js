@@ -6,15 +6,22 @@ import Thanks from "./components/Thanks";
 import Results from "./components/Results";
 
 const INITIAL_VOTES = [
-  { id: "song1", vote: 1 },
-  { id: "song2", vote: 1 },
-  { id: "song3", vote: 1 },
+  { id: "song1", vote: 0 },
+  { id: "song2", vote: 0 },
+  { id: "song3", vote: 0 },
 ];
+
+let pulledBool = false;
+if (localStorage["ifVoted"] && localStorage["ifVoted"] === "true") {
+  pulledBool = true;
+} else {
+  pulledBool = false;
+}
 
 function App() {
   const [activeComponent, setActiveComponent] = useState("Introduction");
   const [votes, setVotes] = useState(INITIAL_VOTES);
-  const [didVote, setDidVote] = useState(false);
+  const [didVote, setDidVote] = useState(pulledBool);
 
   const changeActivePage = function (active) {
     setActiveComponent(active);
