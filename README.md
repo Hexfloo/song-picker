@@ -1,4 +1,4 @@
-# song-vote-react :bride_with_veil::ring::clinking_glasses:
+# wedding-song-vote :bride_with_veil::ring::clinking_glasses:
 
 Do you know what song is going to play as you walk down the aisle?<br>
 Let guests at your wedding vote for the song! The wedding DJ will have access to voting results and will play the winning song.
