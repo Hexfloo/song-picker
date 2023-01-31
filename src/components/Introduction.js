@@ -27,10 +27,7 @@ const Introduction = function (props) {
           <br />
           <b>שיר החופה שלנו.</b>
           <br />
-          <button
-            className="btn submit-btn-on shadow-none"
-            onClick={goToVotingHandler}
-          >
+          <button className="btn submit-btn-on" onClick={goToVotingHandler}>
             להצבעה
           </button>
         </p>

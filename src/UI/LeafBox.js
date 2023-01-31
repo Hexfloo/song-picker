@@ -1,6 +1,6 @@
 const LeafBox = function () {
   return (
-    <div className="m-0 leaf-box">
+    <div className="leaf-box">
       <img
         src="https://res.cloudinary.com/hexfloo/image/upload/v1650201485/morandstav/leaf_ccso8c.png"
         alt="leaf"

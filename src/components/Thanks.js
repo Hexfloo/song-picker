@@ -10,10 +10,7 @@ const Thanks = function (props) {
       <div className="box" id="thanks-box">
         <h1>תודה!</h1>
         <p>הדיג'יי קיבל את ההצבעה שלך</p>
-        <button
-          className="btn submit-btn-on shadow-none"
-          onClick={goToResultsHandler}
-        >
+        <button className="btn submit-btn-on" onClick={goToResultsHandler}>
           לתוצאות
         </button>
       </div>

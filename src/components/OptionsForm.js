@@ -1,6 +1,6 @@
 import "../App.css";
 import FormItem from "./FormItem";
-import { useState, Fragment } from "react";
+import { useState } from "react";
 
 const OptionsForm = function (props) {
   const [selectedSong, setSelectedSong] = useState("");
@@ -45,7 +45,7 @@ const OptionsForm = function (props) {
   };
 
   return (
-    <Fragment>
+    <>
       <div id="song-picker-page">
         <h2>
           עזרו לנו לבחור <br /> את שיר החופה
@@ -60,6 +60,7 @@ const OptionsForm = function (props) {
         <div>
           {songs.map((song) => (
             <FormItem
+              key={song.id}
               info={song}
               selectedSong={selectedSong}
               handleRadioChange={handleRadioChange}
@@ -75,7 +76,7 @@ const OptionsForm = function (props) {
           </button>
         </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 

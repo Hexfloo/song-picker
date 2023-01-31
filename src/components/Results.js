@@ -18,10 +18,7 @@ const Results = function (props) {
 
         <h5>The one that I want: {props.items[2].vote}</h5>
 
-        <button
-          className="btn submit-btn-on shadow-none"
-          onClick={goToIntroductionHandler}
-        >
+        <button className="btn submit-btn-on" onClick={goToIntroductionHandler}>
           חזרה
         </button>
       </div>

@@ -1,7 +1,7 @@
 import "../App.css";
 const FormItem = function (props) {
   return (
-    <div key={props.info.id}>
+    <div>
       <input
         type="radio"
         className="btn-check"
