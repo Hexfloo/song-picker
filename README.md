@@ -7,11 +7,20 @@ Let guests at your wedding vote for the song! The wedding DJ will have access to
 
 #### This app includes:
 
-- Main page, with concise explanation of the process
-- Form page, for the actual voting
-- Thanks page, generates after voting is completed
-- DJ page, accessed through a secret URL (regular users can't view the results)
-- JS script that prohibits a user from voting more than once
+- Introduction page, with concise explanation of the voting process.
+- Form page, for the actual voting.
+- Thanks page, generates after voting is completed.
+- Results page (in previous versions of this app, this page was inaccessible to regular users. This functionality can be added again if needed).
+
+## Special features
+
+#### One vote per person:
+
+After casting a vote, localStorage is saved to ensure every person votes only once. Yes, technically users can remove browser data and vote again, but this action seems implausible in an actual event setting.
+
+#### Connection to a database:
+
+For real-life use, votes will be gathered and pulled from an actual DB. This version has no DB connection currently.
 
 ## Mobile-first approach
 
@@ -19,4 +28,4 @@ This web app is best used on a smartphone, but is fully responsive and can be vi
 
 ## Built with specific occasion in mind
 
-This app was developed to be used in an event such as a wedding, therefore it was designed with simplicity and usability in mind. Younger users will have an inherit understanding of the voting process without much attention, and older users will be directed by clear and precise instructions.
+This app was developed to be used in a real-life event such as a wedding, therefore designed with simplicity and usability in mind. Younger users will have an inherit understanding of the voting process without much attention, and older users will be directed by clear and precise instructions.
